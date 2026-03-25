@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión de Menú Dinámico | Abimael Perez</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --bg: #f4f7f6;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 20px;
+      padding-bottom: 100px;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    
+    .form-container {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 150px;
+    }
+
+    .btn-add {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+  
+    #menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .menu-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card-actions { display: flex; gap: 5px; }
+
+    button.small {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      color: white;
+      font-size: 12px;
+    }
+
+    .btn-edit { background: #f39c12; }
+    .btn-delete { background: #e74c3c; }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .form-container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gestor de Menú Dinámico</h1>
+  
+  <div class="form-container">
+    <input type="text" id="in-nombre" placeholder="Nombre (ej: Galería)" />
+    <input type="text" id="in-enlace" placeholder="Enlace (ej: /galeria o http://...)" />
+    <button class="btn-add" onclick="controladorAgregar()">Añadir al Menú</button>
+  </div>
+
+  <h2>Navegación Generada:</h2>
+  <div id="menu-container"></div>
+</div>
+
+<footer>
+  &copy; 2026 Abimael Perez Hernandez |
+</footer>
+
+<script src="js.js"></script>
+</body>
+</html>

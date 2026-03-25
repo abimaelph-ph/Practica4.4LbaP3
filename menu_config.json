@@ -1,0 +1,24 @@
+{
+  "menu_config": [
+    {
+      "id": 101,
+      "nombre": "Inicio",
+      "enlace": "/inicio"
+    },
+    {
+      "id": 102,
+      "nombre": "Sobre Nosotros",
+      "enlace": "/nosotros"
+    },
+    {
+      "id": 103,
+      "nombre": "Servicios",
+      "enlace": "/servicios"
+    },
+    {
+      "id": 104,
+      "nombre": "Contacto",
+      "enlace": "/contacto"
+    }
+  ]
+}
